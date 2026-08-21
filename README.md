@@ -1,11 +1,18 @@
 # RWA VPS Panel installer
 
-Install the private RWA VPS Panel on a fresh Ubuntu 24.04 VPS:
+Install the complete RWA VPS Panel on a fresh Ubuntu 24.04 VPS:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/ShentoHendriks/rwa-vps-installer/main/install.sh | sudo bash
 ```
 
-The installer prompts securely for a GitHub token with **Contents: Read** access to `ShentoHendriks/rwa-vps-panel`, followed by the panel domain and Let's Encrypt email address. No credentials are included in the command or saved in shell history.
+No GitHub account, token, repository access, or extra command arguments are required. The installer downloads the public, versioned panel release and asks only for:
 
-The token is used only to clone the private panel source. The installer removes it from the installed Git remote immediately afterward.
+- the panel domain, which must already point to the VPS;
+- the email address used for the Let's Encrypt certificate.
+
+When it completes, open `https://your-panel-domain/setup` and create the owner account.
+
+## Releases
+
+The installer pins the release version in `install.sh`. The source archive it downloads is public so a fresh VPS can install it without credentials.
