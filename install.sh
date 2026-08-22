@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-VERSION=v1.0.63
+VERSION=v1.0.64
 ARCHIVE_URL="https://github.com/ShentoHendriks/rwa-vps-installer/releases/download/${VERSION}/rwa-vps-panel-${VERSION}.tar.gz"
 WORK_DIR="$(mktemp -d)"
 trap 'rm -rf "$WORK_DIR"' EXIT
